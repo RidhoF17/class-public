@@ -1,0 +1,80 @@
+#include <iostream>
+using namespace std;
+
+class Kotak {
+public:
+    double panjang; // public member variable
+    double lebar;   // public member variable
+
+    double hitungLuas() {
+        return panjang * lebar;
+    }
+};
+
+int main() {
+    Kotak kotak1; // membuat objek kotak1 dari class Kotak
+    kotak1.panjang = 3.0; // mengisi nilai public member panjang
+    kotak1.lebar = 4.0;   // mengisi nilai public member lebar
+
+    double luas = kotak1.hitungLuas(); // menghitung luas kotak1
+    cout << "Luas kotak1 = " << luas << endl;
+
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Mahasiswa {
+public:
+    string nama; // public member variable
+    int umur;    // public member variable
+    double ipk;  // public member variable
+
+    Mahasiswa() { } // constructor kosong
+
+    void inputInfo() {
+        cout << "Masukkan nama mahasiswa: ";
+        getline(cin, nama);
+
+        cout << "Masukkan umur mahasiswa: ";
+        cin >> umur;
+
+        cout << "Masukkan IPK mahasiswa: ";
+        cin >> ipk;
+    }
+
+    void printInfo() {
+        cout << "Nama: " << nama << endl;
+        cout << "Umur: " << umur << endl;
+        cout << "IPK: " << ipk << endl;
+    }
+
+    void naikSemester() {
+        if (ipk >= 3.0) {
+            cout << "Anda naik semester!" << endl;
+        }
+        else {
+            cout << "Anda belum bisa naik semester." << endl;
+        }
+    }
+};
+
+int main() {
+    Mahasiswa mhs1; // membuat objek mhs1 dari class Mahasiswa
+    mhs1.inputInfo(); // meminta input informasi mahasiswa dari pengguna
+    mhs1.printInfo(); // mencetak informasi mahasiswa
+    mhs1.naikSemester(); // mengecek apakah mahasiswa bisa naik semester
+
+    Mahasiswa mhs2; // membuat objek mhs2 dari class Mahasiswa
+    mhs2.inputInfo(); // meminta input informasi mahasiswa dari pengguna
+    mhs2.printInfo(); // mencetak informasi mahasiswa
+    mhs2.naikSemester(); // mengecek apakah mahasiswa bisa naik semester
+
+    return 0;
+}
+
+
+
